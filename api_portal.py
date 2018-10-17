@@ -32,7 +32,8 @@ def framework_error(e):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', port=9999, debug=True)
+    # , debug=True
     # , ssl_context = (
     #     "C:/https/server/server-cert.pem",
     #     "C:/https/server/server-key.pem")
