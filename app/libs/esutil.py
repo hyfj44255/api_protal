@@ -131,5 +131,4 @@ def query_statement_or(**cols):
     ei_or.append(also2)
 
     query = dict(query=dict(bool={"should": ei_or}))
-    print(query)
     return query

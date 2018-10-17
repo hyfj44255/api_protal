@@ -1,5 +1,5 @@
 import time
-from app.libs.esutil import ESUtil
+from app.libs.esutil import ESUtil,query_statement_or
 from app.libs.redprint import Redprint
 from app.models.lit import LIT
 from app.validators.forms import EsQueryForm
