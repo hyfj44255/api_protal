@@ -1,6 +1,7 @@
 from flask import request, json
 from werkzeug.exceptions import HTTPException
 
+
 class APIException(HTTPException):
     code = 500
     msg = 'sorry, we made a mistake (*￣︶￣)!'
@@ -20,7 +21,7 @@ class APIException(HTTPException):
         body = dict(
             msg=self.msg,
             error_code=self.error_code,
-            request= + ' ' + self.get_url_no_param()
+            request=request.method + ' ' + self.get_url_no_param()
         )
         text = json.dumps(body)
         return text
@@ -34,4 +35,3 @@ class APIException(HTTPException):
         full_path = str(request.full_path)
         main_path = full_path.split('?')
         return main_path[0]
-
