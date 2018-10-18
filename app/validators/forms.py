@@ -61,7 +61,7 @@ class EsQueryForm(Form):
                 for x in elements:
                     if x not in keys or not is_element_valid(elements[x]):
                         if x == 'account_country':
-                            elements[x] = "WW"
+                            pass
                         else:
                             raise PayloadElementsError()
         else:

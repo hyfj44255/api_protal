@@ -1,5 +1,5 @@
 import time
-from app.libs.esutil import ESUtil,query_statement_or
+from app.libs.esutil import ESUtil, query_statement_or
 from app.libs.redprint import Redprint
 from app.models.lit import LIT
 from app.validators.forms import EsQueryForm
@@ -17,7 +17,9 @@ def create_client():
     timestamp = form.timestamp.data
     bean_list = []
     for param in payload:
-        account = param['account_mpp'] + param['account_country']
+        country = param['account_country']
+        country = country if len(country.strip()) != 0 else 'WW'
+        account = param['account_mpp'] + country
         product = param['prod_id']
         product_level = "product_" + str(param['prod_level'])
         query = "query_statement_or(account=account, " + product_level + "=product)"
