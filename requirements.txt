@@ -2,7 +2,7 @@ asn1crypto==0.24.0
 bcrypt==3.1.4
 cffi==1.11.5
 click==6.7
-cryptography==2.3.1
+cryptography==3.2
 cymysql==0.9.12
 elasticsearch==6.3.1
 Flask==1.0.2
